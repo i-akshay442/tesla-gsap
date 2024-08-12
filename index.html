@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Tenor+Sans&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="logo">
+                <img src="./images/logo.png" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Buy</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Take a Ride</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="wrap">
+            <h1>The Greatest <span>Ride</span><br>Ever</h1>
+            <div class="img">
+                <h1>TESLA</h1>
+                <img src="./images/3.png" class="heading" alt="">
+            </div>
+        </div>
+
+        <div class="slidebar">
+            <ul>
+                <li class="btn" value="=01"> <img src="./images/1.png" alt=""></li>
+                <li class="btn" value="=01"> <img src="./images/2.png" alt=""></li>
+                <li class="btn" value="=01"> <img src="./images/download.jpeg" alt=""></li>
+            </ul>
+            <div class="line">
+                <span></span>
+                <div class="number">03</div>
+                <span></span>
+            </div>
+        </div>
+    
+    <!-- <section>
+        <div class="container1">
+            <div class="left-side">
+                <img src="./images/download (1).jpeg" class="star-s4 star" alt="">
+                <div class="title">
+                    <h1>3 direction</h1>
+                    <h2>Choose your gold</h2>
+                </div>
+            </div>
+            <div class="right-side">
+                <p>
+                    The fineness of gold depends on the amount of ligature - additional metals. 
+                    For example, yellow gold 585* is a metal with the addition 
+                    of 28% silver and 113.5% copper.
+                </p>
+
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card card-1">
+                <div class="rotation">
+                    <img src="./images/download (2).jpeg" alt="" class="img-card image">
+                </div>
+                <div class="color">yellow</div>
+                <span>585 standard gold</span>
+            </div>
+            <div class="card card-2">
+                <div class="rotation">
+                    <img src="./images/download.jpeg" alt="" class="img-card image">
+                </div>
+                <div class="color">white</div>
+                <span>585 standard gold</span>
+            </div>
+        </div>
+            -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Animate logo
+            gsap.from(".logo img", {
+                opacity: 0,
+                y: -50,
+                duration: 1,
+                delay: 0.5
+            });
+
+            // Animate menu items
+            gsap.from("nav ul li", {
+                opacity: 0,
+                y: 20,
+                duration: 0.5,
+                stagger: 0.2
+            });
+
+            // Animate header text
+            gsap.from(".wrap h1", {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                delay: 1
+            });
+
+            // Animate Tesla image
+            gsap.from(".wrap .img img", {
+                opacity: 0,
+                scale: 0.5,
+                duration: 1,
+                delay: 1.5
+            });
+
+            // Animate slidebar elements
+            gsap.from(".slidebar ul li", {
+                opacity: 0,
+                x: -100,
+                duration: 0.5,
+                stagger: 0.2,
+                delay: 2
+            });
+
+            gsap.from(".slidebar .line", {
+                opacity: 0,
+                scaleX: 0,
+                duration: 1,
+                delay: 2.5
+            });
+
+            gsap.from(".slidebar .number", {
+                opacity: 0,
+                scale: 0.5,
+                duration: 0.5,
+                delay: 3
+            });
+        });
+        gsap.utils.toArray('.star').forEach(star=>{
+    gsap.fromTo(star,{
+        rotation:450,
+        opacity:0,
+        y:100
+    },{
+        rotation:0,
+        opacity:1,
+        y:0,
+        duration:1,
+        delay:1.5,
+        scrollTrigger:star
+    })
+});
+    </script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js" ></script>
+
+</html>
